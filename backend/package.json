@@ -1,0 +1,22 @@
+{
+  "name": "ondc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cassandra-driver": "^4.7.2",
+    "csv-parser": "^3.0.0",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cache": "^5.1.2",
+    "scylladb": "^0.0.1-c",
+    "xlsx": "^0.18.5",
+    "xslx": "^1.0.0"
+  }
+}

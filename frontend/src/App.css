@@ -1,0 +1,111 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.upload-button:hover {
+ 
+  background-color: #45a049;
+}
+
+.search-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #1e87dc;
+}
+.custom-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.file-upload-label {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.file-upload-label input[type="file"] {
+  display: none;
+}
+
+.file-upload-button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-upload-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #1e87dc;
+}
+/* Add these styles to your existing CSS file or create a new one */
+
+.instruction {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instruction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.instruction-list li {
+  margin-bottom: 5px;
+}
