@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import Swal from "sweetalert2";
 import "./App.css";
 import axios from "axios";
-
+import PincodeSearch from "./Pincode";
 function Dashboard() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -84,14 +84,6 @@ function Dashboard() {
   );
 }
 
-function PincodeSearch() {
-  return (
-    <div className="pincode-search">
-      <h2>Pincode Search Page</h2>
-      {/* Add your pincode search functionality here */}
-    </div>
-  );
-}
 
 function App() {
   return (

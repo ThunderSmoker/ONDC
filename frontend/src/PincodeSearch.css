@@ -1,0 +1,67 @@
+.pincode-search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .search-box button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .merchants-list {
+    margin-top: 20px;
+  }
+  
+  .scrollable-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .scrollable-list ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .scrollable-list li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  .scrollable-list li:last-child {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 768px) {
+    .search-box {
+      flex-direction: column;
+    }
+  
+    .search-box input {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .search-box button {
+      width: 100%;
+    }
+  }
+  

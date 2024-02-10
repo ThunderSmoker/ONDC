@@ -7,6 +7,7 @@ const app = express();
 const xlsx = require("xlsx");
 const { log } = require("console");
 const NodeCache = require("node-cache");
+const cors = require("cors"); // Import the cors middleware
 const client = new cassandra.Client({
   contactPoints: ["127.0.0.1"],
   localDataCenter: "datacenter1",
@@ -15,6 +16,7 @@ const client = new cassandra.Client({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // Use the cors middleware
 app.get("/", (req, res) => {
   res.send("Welcome to the CRUD API");
 });
