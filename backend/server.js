@@ -7,7 +7,7 @@ const app = express();
 const xlsx = require("xlsx");
 const { log } = require("console");
 const NodeCache = require("node-cache");
-const cors = require("cors"); // Import the cors middleware
+const cors = require("cors"); 
 const client = new cassandra.Client({
   contactPoints: ["127.0.0.1"],
   localDataCenter: "datacenter1",
@@ -16,7 +16,11 @@ const client = new cassandra.Client({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors()); // Use the cors middleware
+app.use(cors(
+    {
+        origin: "*"
+    }
+)); 
 app.get("/", (req, res) => {
   res.send("Welcome to the CRUD API");
 });
@@ -116,15 +120,17 @@ app.get("/merchant/:pincode", async (req, res) => {
     if (cachedData) {
       return res.json(cachedData);
     }
-    const result = await client.execute(
+    let result = await client.execute(
       "SELECT merchants FROM merchants WHERE pincode = ?",
       [pincode]
     );
-    if (result.rowLength === 0) {
+     result=result.rows;
+     console.log(result[0]);
+    if (result[0].rowLength === 0) {
       res.status(404).send("No merchants found for this pincode");
     } else {
-      cache.set(pincode, result[0].merchants);
-      res.json(result.rows[0].merchants);
+
+      res.json(result[0].merchants);
     }
   } catch (error) {
     console.error(error);
@@ -164,7 +170,7 @@ app.delete("/merchant/:pincode", async (req, res) => {
 // Create a POST endpoint to add merchant name in front of pincode
 app.post("/add-merchant", async (req, res) => {
   const { merchantName, pincodeList } = req.body;
-
+  console.log(merchantName, pincodeList);
   try {
     // Iterate through the list of pin codes
     await Promise.all(

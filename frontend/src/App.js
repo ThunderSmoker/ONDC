@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import "./App.css";
 import axios from "axios";
 import PincodeSearch from "./Pincode";
+import MerchantAddition from "./addmerchant";
 function Dashboard() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -64,6 +65,11 @@ function Dashboard() {
         </Link>
 
       </div>
+      <div className="actions">
+      <Link to="/addmerchant" className="search-button">
+          Add Merchant
+        </Link>
+        </div>
 
       <Modal
         isOpen={modalIsOpen}
@@ -91,6 +97,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route path="/pincode" element={<PincodeSearch />} />
+          <Route path="/addmerchant" element={<MerchantAddition />} />
           <Route path="/" element={<Dashboard />} />
         </Routes>
       </div>
